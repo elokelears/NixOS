@@ -3,10 +3,11 @@
         ./hardware-configuration.nix
     ];
 
-    # AMD GPU
-    services.xserver.videoDrivers = [ "amdgpu" ];
+    # NVIDIA GPU
+    services.xserver.videoDrivers = [ "nvidia" ];
     hardware.graphics.enable = true;
-    boot.initrd.kernelModules = [ "amdgpu" ];
+    hardware.nvidia.open = true;
+    
 
     # Bootloader
     boot.loader.systemd-boot.enable = true;

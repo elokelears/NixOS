@@ -14,7 +14,11 @@
         };
 
         # hyprpanel the bar of hyprland
-        hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+        hyprpanel = {
+            url = "github:Jas-SinghFSU/HyprPanel";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
 
         # nur
         nur = {
@@ -73,7 +77,7 @@
 
                     stylix.homeManagerModules.stylix
 
-                    
+                    hyprpanel.homeManagerModules.hyprpanel 
 
                     
                 ];

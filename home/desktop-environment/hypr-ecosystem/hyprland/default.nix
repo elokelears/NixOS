@@ -44,12 +44,15 @@
         systemd.enable = false;
         settings = {
             exec-once = [
-                "uwsm app -- hyprpanel"
                 "uwsm app -- fcitx5 -d"
                 "uwsm app -- wshowkeys -f #${config.lib.stylix.colors.base0E} -b #${config.lib.stylix.colors.base08} -s #${config.lib.stylix.colors.base0A} -t 1000 -a right -a bottom"
             ];
             # Monitor
-            monitor = ", 2880x1800@120, auto, 2";
+            monitor = [
+                ", 2880x1800@120, auto, 2"
+                "DP-1, 3840x2160@160, auto, 2"
+            
+            ];
 
             xwayland = {
                 force_zero_scaling = true;
@@ -145,7 +148,7 @@
             ];
 
             general = {
-                border_size = 4;
+                border_size = 2;
                 no_border_on_floating = true;
                 gaps_in = 5;
                 gaps_out = 5;

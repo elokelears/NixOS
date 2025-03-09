@@ -158,6 +158,9 @@
         libnotify
 
         wl-clipboard
+
+        # systemstatus
+        libgtop
         
 
         # bluetooth

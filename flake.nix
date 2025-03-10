@@ -42,6 +42,12 @@
             ];
             config = {
                 allowUnfree = true;
+                packageOverrides = pkgs: {
+                    hyprpanel = pkgs.hyprpanel.overrideAttrs (oldAttrs: {
+                        buildInputs = oldAttrs.buildInputs ++ [ pkgs.libgtop ];
+                        propagatedBuildInputs = (oldAttrs.propagatedBuildInputs or []) ++ [ pkgs.libgtop ];
+                    });
+                };
             };
         };
         

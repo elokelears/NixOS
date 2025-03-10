@@ -162,9 +162,12 @@
 
         # systemstatus
         libgtop
-
         # bluetooth
     ];
+
+    
+
+
 
     # Set the state version
     system.stateVersion = "25.05";

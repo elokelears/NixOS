@@ -61,5 +61,10 @@
         enable = true;
     };
 
+    programs.btop = {
+        enable = true;
+    };
+
+
 
 }

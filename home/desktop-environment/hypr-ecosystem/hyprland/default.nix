@@ -224,7 +224,9 @@
             input = {
                 kb_layout = "us";
                 kb_options = "caps:swapescape";
+                
                 numlock_by_default = true;
+
 
                 touchpad = {
                     disable_while_typing = true;

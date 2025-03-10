@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
-{
+{   
+    home.packages = with pkgs; [
+        ags
+        hyprpanel
+    ];
+
     programs.hyprpanel = {
         enable = true;
         hyprland.enable = true;
@@ -74,8 +79,9 @@
                         tooltip = "discord";
                     };
                     shortcut2 = {
-                        command = "uwsm app -- spotify";
-                        tooltip = "spotify";
+                        icon = "󰍹";
+                        command = "uwsm app -- kitty -e btop";
+                        tooltip = "monitor system";
                     };
                     shortcut4 = {
                         command = "uwsm app -- fuzzel";

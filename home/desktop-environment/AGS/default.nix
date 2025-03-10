@@ -24,6 +24,11 @@
 
         settings = {
             # Set the bar transparent
+
+            wallpaper = {
+                enable = true;
+                image = ./nixos.png;
+            };
             theme = {
                 font = {
                     name = "ComicShannsMono Nerd Font";
@@ -56,7 +61,10 @@
                 };
                 network.label = false;
                 customModules.hypridle.label = false;
+                customModules.hypridle.offIcon = "󰒲";
+                customModules.hypridle.onIcon = "󰒳";
                 bluetooth.label = false;
+
 
                
                 

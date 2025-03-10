@@ -27,7 +27,7 @@
 
             wallpaper = {
                 enable = true;
-                image = ./nixos.png;
+                image = "./nixos.png";
             };
             theme = {
                 font = {

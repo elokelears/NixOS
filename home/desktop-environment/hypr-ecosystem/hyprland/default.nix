@@ -68,6 +68,9 @@
                 # Launch fuzzel
                 "SUPER, E, exec, uwsm app -- fuzzel"
 
+                # Lock Screen
+                "SUPER, L, exec, uwsm app -- loginctl lock-session"
+
                 # Sound Control
                 ", XF86AudioRaiseVolume, exec, uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
                 ", XF86AudioLowerVolume, exec, uwsm app -- wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
@@ -223,7 +226,7 @@
             # Input
             input = {
                 kb_layout = "us";
-                kb_options = "caps:swapescape";
+                
                 
                 numlock_by_default = true;
 

@@ -15,6 +15,15 @@
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
         historySubstringSearch.enable = true;
+        
+        # 在初始化时运行 fastfetch，但避免在嵌套终端中执行
+        initExtra = ''
+            # 只在交互式会话且没有设置 FASTFETCH_DISPLAYED 环境变量时运行
+            if [[ -o interactive ]] && [[ -z "$FASTFETCH_DISPLAYED" ]]; then
+                fastfetch
+                export FASTFETCH_DISPLAYED=1
+            fi
+        '';
     };
 
     home.packages = with pkgs; [
@@ -25,16 +34,20 @@
         enable = true;
         settings = {
             logo = {
-                source = "ubuntu";
+                source = "$HOME/NixOS/home/terminal-command/logo.png";
                 height = 18;
+                padding = {
+                    top = 1;
+                    right = 1;
+                };
             };
             display = {
-                separator = " : ";
+                separator = "   ";
             };
             modules = [
                 {
                     type = "command";
-                    key = "  ";
+                    key = "  ";
                     keyColor = "blue";
                     text = "splash=$(hyprctl splash);echo $splash";
                 }
@@ -49,13 +62,13 @@
                 }
                 {
                     type = "os";
-                    key = "  󰣇 OS";
+                    key = "   OS";
                     format = "{2}";
                     keyColor = "red";
                 }
                 {
                     type = "kernel";
-                    key = "   Kernel";
+                    key = "   Kernel";
                     format = "{2}";
                     keyColor = "red";
                 }
@@ -72,7 +85,7 @@
                 }
                 {
                     type = "terminal";
-                    key = "   Terminal";
+                    key = "   Terminal";
                     keyColor = "yellow";
                 }
                 {
@@ -88,7 +101,7 @@
                 "break"
                 {
                     type = "title";
-                    key = "  ";
+                    key = "  ";
                     format = "{6} {7} {8}";
                 }
                 {
@@ -98,7 +111,7 @@
                 {
                     type = "cpu";
                     format = "{1} @ {7}";
-                    key = "   CPU";
+                    key = "  󰻠 CPU";
                     keyColor = "blue";
                 }
                 {
@@ -110,12 +123,12 @@
                 {
                     type = "gpu";
                     format = "{3}";
-                    key = "   GPU Driver";
+                    key = "   GPU Driver";
                     keyColor = "magenta";
                 }
                 {
                     type = "memory";
-                    key = "   Memory ";
+                    key = "  󰘨 Memory ";
                     keyColor = "magenta";
                 }
                 {

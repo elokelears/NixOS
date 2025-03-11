@@ -27,7 +27,7 @@
 
             wallpaper = {
                 enable = true;
-                image = "/home/elokelears/NixOS/home/desktop-environment/AGS/nixos.png";
+                image = "/home/elokelears/NixOS/home/desktop-environment/AGS/big.png";
             };
             theme = {
                 font = {

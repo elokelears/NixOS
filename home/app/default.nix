@@ -7,6 +7,6 @@
         ./code-program
         ./editor
         #./music
-        #./video
+        ./video
     ];
 }

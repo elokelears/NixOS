@@ -7,6 +7,7 @@
 
         # JetBrains IDEs
         jetbrains.idea-ultimate
+        jdk
 
         # VSCode
         vscode

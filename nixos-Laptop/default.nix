@@ -68,6 +68,8 @@
             nerd-fonts.fira-code
             nerd-fonts.comic-shanns-mono
             nerd-fonts.jetbrains-mono
+            maple-mono-NF
+            
         ];
         fontconfig = {
             enable = true;
@@ -75,7 +77,7 @@
                 sansSerif = [ "Noto Sans CJK SC" ];
                 serif = [ "Noto Serif CJK SC" ];
                 emoji = [ "Noto Color Emoji" ];
-                monospace = [ "Comic Shanns Mono" "JetBrains Mono" "Fira Code" ];
+                monospace = [ "ComicShannsMono Nerd Font" "Maple Mono NF" "Noto Sans Mono CJK SC" "JetBrains Mono" "Fira Code" ];
             };
         };
     };

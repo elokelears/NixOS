@@ -25,6 +25,12 @@
         layout = "us";
         variant = "";
     };
+    
+    # Enable mysql
+    services.mysql = {
+        enable = true;
+        package = pkgs.mysql80;
+    };
 
     # Configure console keymap
     console.keyMap = "us";
